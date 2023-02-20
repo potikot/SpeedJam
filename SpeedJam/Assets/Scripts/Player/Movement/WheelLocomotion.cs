@@ -23,6 +23,8 @@ public class WheelLocomotion : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
+
+        rb.velocity = Vector3.left;
     }
 
     private void Update()

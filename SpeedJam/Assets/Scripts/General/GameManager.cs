@@ -15,6 +15,8 @@ public class GameManager : MonoBehaviour
     
     public static SwitchMovement SwitchMovement;
 
+    public static bool isWin = false;
+
     private void Awake()
     {
         Time.timeScale = 0f;
@@ -53,7 +55,7 @@ public class GameManager : MonoBehaviour
     {
         Time.timeScale = 0f;
 
-        if (Timer.Value < bestTime)
+        if (isWin && Timer.Value < bestTime)
         {
             SubmitTime();
             bestTime = Timer.Value;
@@ -61,7 +63,7 @@ public class GameManager : MonoBehaviour
 
         finalMessageUI.SetActive(true);
         currentTimeUI.text = $"Current time: {Timer.Value}";
-        bestTimeUI.text = $"Best time: {(bestTime < Timer.Value ? bestTime : Timer.Value)}";
+        bestTimeUI.text = $"Best time: {bestTime}";
     }
 
     public void SubmitTime()
