@@ -1,6 +1,7 @@
 using LootLocker.Requests;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -64,6 +65,11 @@ public class GameManager : MonoBehaviour
         finalMessageUI.SetActive(true);
         currentTimeUI.text = $"Current time: {Timer.Value}";
         bestTimeUI.text = $"Best time: {bestTime}";
+    }
+
+    public void Restart()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     public void SubmitTime()

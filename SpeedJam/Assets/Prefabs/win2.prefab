@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2679384753872109461}
   - component: {fileID: 6946009800666941433}
   - component: {fileID: 3924225329507386730}
+  - component: {fileID: 3833750753380247549}
   m_Layer: 0
   m_Name: win2
   m_TagString: Untagged
@@ -114,3 +115,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   decelerationMultiplier: 0
   switchOnHit: 0
+--- !u!64 &3833750753380247549
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4481057770179354176}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -8663802791670341782, guid: 99d0c790e648d5949adce653ff4aa112, type: 3}

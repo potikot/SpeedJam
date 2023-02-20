@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6813625212967755762}
   - component: {fileID: -3770972200246865865}
   - component: {fileID: -3594379546004392489}
+  - component: {fileID: 3711419607211784287}
   m_Layer: 0
   m_Name: "\u0437\u0430\u0431\u043E\u04403"
   m_TagString: Untagged
@@ -113,3 +114,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   decelerationMultiplier: 0
   switchOnHit: 0
+--- !u!65 &3711419607211784287
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5011979134092000807}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.5460689, y: 0.08152502, z: 0.7040867}
+  m_Center: {x: 0.0032258779, y: -0.005383491, z: 0.35160074}
