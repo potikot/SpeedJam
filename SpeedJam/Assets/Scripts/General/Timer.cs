@@ -1,7 +1,10 @@
+using TMPro;
 using UnityEngine;
 
 public class Timer : MonoBehaviour
 {
+    [SerializeField] private TextMeshProUGUI UI;
+
     private static readonly int precise = 100;
     
     private static float value;
@@ -19,6 +22,7 @@ public class Timer : MonoBehaviour
     private void Update()
     {
         value += Time.deltaTime;
+        UI.text = Value.ToString();
     }
 
     public static void ResetTimer()

@@ -10,9 +10,8 @@ public class MeshDestroy : MonoBehaviour
 
     public int CutCascades = 1;
     public float ExplodeForce = 0;
-    public LayerMask layerMask;
 
-    public void DestroyMesh()
+    public void DestroyMesh(Vector3 addForcePosition)
     {
         var originalMesh = GetComponent<MeshFilter>().mesh;
         originalMesh.RecalculateBounds();
@@ -53,8 +52,8 @@ public class MeshDestroy : MonoBehaviour
         for (var i = 0; i < parts.Count; i++)
         {
             parts[i].MakeGameobject(this);
-            parts[i].GameObject.GetComponent<Rigidbody>().AddForceAtPosition(parts[i].Bounds.center * ExplodeForce, transform.position);
-            parts[i].GameObject.layer = 3;
+            parts[i].GameObject.GetComponent<Rigidbody>().AddForceAtPosition(parts[i].Bounds.center * ExplodeForce, addForcePosition);
+            parts[i].GameObject.layer = LayerMask.NameToLayer("IgnorePlayer");
         }
 
         Destroy(gameObject);
@@ -122,8 +121,6 @@ public class MeshDestroy : MonoBehaviour
                 {
                     partMesh.AddTriangle(i,
                                         original.Vertices[triangles[j + singleIndex]],
-                                        //Vector3.Lerp(originalMesh.vertices[triangles[j + singleIndex]], originalMesh.vertices[triangles[j + ((singleIndex + 1) % 3)]], lerp1),
-                                        //Vector3.Lerp(originalMesh.vertices[triangles[j + singleIndex]], originalMesh.vertices[triangles[j + ((singleIndex + 2) % 3)]], lerp2),
                                         ray1.origin + ray1.direction.normalized * enter1,
                                         ray2.origin + ray2.direction.normalized * enter2,
                                         original.Normals[triangles[j + singleIndex]],
@@ -276,6 +273,8 @@ public class MeshDestroy : MonoBehaviour
             collider.convex = true;
 
             var rigidbody = GameObject.AddComponent<Rigidbody>();
+
+            GameObject.AddComponent<MeshDissolve>();
 
             if (mesh.triangles.Length <= 0)
                 Destroy(GameObject);

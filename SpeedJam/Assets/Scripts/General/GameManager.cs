@@ -8,14 +8,22 @@ public class GameManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI currentTimeUI;
     [SerializeField] private TextMeshProUGUI bestTimeUI;
 
-    private string leaderboardID = "11866";
+    private readonly string leaderboardID = "11866";
     private string memberID;
 
     private float bestTime;
+    
+    public static SwitchMovement SwitchMovement;
+
+    private void Awake()
+    {
+        Time.timeScale = 0f;
+    }
 
     private void Start()
     {
         StartGuestSession();
+        SwitchMovement = FindObjectOfType<SwitchMovement>();
     }
 
     private void StartGuestSession()
@@ -37,11 +45,14 @@ public class GameManager : MonoBehaviour
 
     public void StartRun()
     {
+        Time.timeScale = 1f;
         Timer.ResetTimer();
     }
 
     public void StopRun()
     {
+        Time.timeScale = 0f;
+
         if (Timer.Value < bestTime)
         {
             SubmitTime();
