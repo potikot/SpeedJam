@@ -43,6 +43,9 @@ public class WheelLocomotion : MonoBehaviour
         verticalInput = Input.GetKey(KeyCode.W) ? 1f : 0f;
         horizontalInput = Input.GetAxis("Horizontal");
 
+        if (rb.velocity.x >= 0)
+            rb.velocity = Vector3.left;
+
         rb.velocity += verticalInput * verticalSpeed * rb.velocity.normalized + horizontalInput * horizontalSpeed * Vector3.forward;
         rb.velocity = Vector3.ClampMagnitude(rb.velocity, maxVelocityMagnitude);
 
@@ -73,6 +76,8 @@ public class WheelLocomotion : MonoBehaviour
     public void Deceleration(float multiplier)
     {
         rb.velocity = LastVelocity * multiplier;
+        if (rb.velocity.x >= 0)
+            rb.velocity += Vector3.left;
     }
 
     private void Jump()
