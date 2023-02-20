@@ -42,7 +42,7 @@ public class MenuLeaderboard : MonoBehaviour
                 for (int i = 0; i < response.items.Length; i++)
                 {
                     leaderboardTexts[i].text = string.Empty;
-                    leaderboardTexts[i].text += $"{response.items[i].rank}. {response.items[i].metadata} - {response.items[i].score}\n";
+                    leaderboardTexts[i].text += $"{response.items[i].rank}. {response.items[i].metadata} - {Timer.ToFloat(response.items[i].score)}\n";
                 }
             }
             else
