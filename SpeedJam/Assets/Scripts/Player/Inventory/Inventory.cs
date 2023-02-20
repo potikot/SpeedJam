@@ -15,7 +15,7 @@ public class Inventory : MonoBehaviour
         
         if (pickup)
         {
-            for (int i = 0; i < slots.Length; i++)
+            for (int i = 0; i < isFull.Length; i++)
             {
                 if (!isFull[i])
                 {
@@ -23,7 +23,7 @@ public class Inventory : MonoBehaviour
                     //Instantiate(pickup.slotButton, slots[i].transform);
                     Destroy(pickup.gameObject);
                     count++;
-                    text.text = count.ToString() + "/5";
+                    text.text = count.ToString() + "/" + isFull.Length.ToString();
                     if (count >= isFull.Length)
                         FindObjectOfType<GameManager>().StopRun();
                     break;

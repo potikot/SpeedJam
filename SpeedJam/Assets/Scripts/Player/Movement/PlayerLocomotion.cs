@@ -11,7 +11,7 @@ public class PlayerLocomotion : MonoBehaviour
 
     public Rigidbody rb;
 
-    public Vector3 LastVelocity;
+    public Vector3 LastVelocityXZ;
 
     private void Start()
     {
@@ -35,7 +35,8 @@ public class PlayerLocomotion : MonoBehaviour
         float vertical = Input.GetAxis("Vertical");
 
         rb.velocity = horizontal * speed * Vector3.forward + vertical * speed * Vector3.left + rb.velocity.y * Vector3.up;
-        LastVelocity = rb.velocity;
+        LastVelocityXZ = rb.velocity;
+        LastVelocityXZ.y = 0;
     }
 
     private void Rotate()

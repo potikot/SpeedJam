@@ -18,7 +18,7 @@ public class WheelLocomotion : MonoBehaviour
     public Rigidbody rb;
 
     private float verticalInput, horizontalInput;
-    public Vector3 LastVelocity;
+    public Vector3 LastVelocityXZ;
 
     private void Start()
     {
@@ -43,13 +43,17 @@ public class WheelLocomotion : MonoBehaviour
         verticalInput = Input.GetKey(KeyCode.W) ? 1f : 0f;
         horizontalInput = Input.GetAxis("Horizontal");
 
-        if (rb.velocity.x >= 0)
+        if (rb.velocity.x > 0.4f)
             rb.velocity = Vector3.left;
 
-        rb.velocity += verticalInput * verticalSpeed * rb.velocity.normalized + horizontalInput * horizontalSpeed * Vector3.forward;
-        rb.velocity = Vector3.ClampMagnitude(rb.velocity, maxVelocityMagnitude);
+        Vector3 velocityXZ = rb.velocity;
+        velocityXZ.y = 0;
 
-        LastVelocity = rb.velocity;
+        velocityXZ += verticalInput * verticalSpeed * Vector3.left + horizontalInput * horizontalSpeed * Vector3.forward;
+        velocityXZ = Vector3.ClampMagnitude(velocityXZ, maxVelocityMagnitude);
+        rb.velocity = velocityXZ + rb.velocity.y * Vector3.up;
+
+        LastVelocityXZ = velocityXZ;
 
         //else
         //{
@@ -75,7 +79,7 @@ public class WheelLocomotion : MonoBehaviour
 
     public void Deceleration(float multiplier)
     {
-        rb.velocity = LastVelocity * multiplier;
+        rb.velocity = LastVelocityXZ * multiplier;
         if (rb.velocity.x >= 0)
             rb.velocity += Vector3.left;
     }

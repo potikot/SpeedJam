@@ -1,5 +1,50 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1600820613896294386
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4577783749807326285}
+  - component: {fileID: 6181132229338667158}
+  m_Layer: 0
+  m_Name: Collider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4577783749807326285
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1600820613896294386}
+  m_LocalRotation: {x: 0.00000008940697, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 1}
+  m_LocalScale: {x: 0.25, y: 0.25000006, z: 0.25000006}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4123495107239119998}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &6181132229338667158
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1600820613896294386}
+  m_Material: {fileID: 13400000, guid: 39de28e2bb0b407449ef68def0a2b542, type: 2}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 12.593781, y: 7.6663713, z: 0.19999999}
+  m_Center: {x: 0.05526781, y: 0.09972093, z: 0.34260908}
 --- !u!1 &3635047424092591812
 GameObject:
   m_ObjectHideFlags: 0
@@ -12,7 +57,7 @@ GameObject:
   - component: {fileID: 1051101671255671771}
   - component: {fileID: 2986647617931540241}
   - component: {fileID: 8886928971984547492}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: house2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30,7 +75,8 @@ Transform:
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 4, y: 4, z: 4}
   m_ConstrainProportionsScale: 1
-  m_Children: []
+  m_Children:
+  - {fileID: 4577783749807326285}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -93,7 +139,7 @@ MeshCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3635047424092591812}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 39de28e2bb0b407449ef68def0a2b542, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4

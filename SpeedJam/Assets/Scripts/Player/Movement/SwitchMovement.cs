@@ -27,14 +27,14 @@ public class SwitchMovement : MonoBehaviour
         {
             if (inWheel)
             {
-                if (wheelLocomotion.rb.velocity.magnitude <= speedToOutWheel)
+                if (wheelLocomotion.LastVelocityXZ.magnitude <= speedToOutWheel)
                 {
                     Switch();
                 }
             }
             else
             {
-                if (playerLocomotion.rb.velocity.magnitude >= speedToInWheel)
+                if (playerLocomotion.LastVelocityXZ.magnitude >= speedToInWheel)
                 {
                     Switch();
                 }

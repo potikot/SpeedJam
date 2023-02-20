@@ -95,6 +95,10 @@ public class GameManager : MonoBehaviour
             {
                 Debug.Log("Successful get");
                 bestTime = Timer.ToFloat(response.score);
+                if (bestTime <= 0)
+                {
+                    SubmitTime();
+                }
             }
             else
             {

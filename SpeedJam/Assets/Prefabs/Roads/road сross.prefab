@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4657140876182713551}
   - component: {fileID: 8578978399129533290}
   - component: {fileID: 5830560832086183840}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: "road \u0441ross"
   m_TagString: Untagged
   m_Icon: {fileID: 0}

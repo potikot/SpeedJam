@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3594320074742861001}
   - component: {fileID: 1586780380865394691}
   - component: {fileID: 1735087301526215492}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: "\u043A\u0440\u043E\u0432\u0430\u0442\u044C"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
