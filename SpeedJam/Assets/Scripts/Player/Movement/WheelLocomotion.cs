@@ -15,7 +15,7 @@ public class WheelLocomotion : MonoBehaviour
     [SerializeField] private float maxRotateX;
     [SerializeField] private float maxRotateY;
 
-    private Rigidbody rb;
+    public Rigidbody rb;
 
     private float verticalInput, horizontalInput;
     public Vector3 LastVelocity;

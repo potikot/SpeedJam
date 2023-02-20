@@ -9,7 +9,7 @@ public class PlayerLocomotion : MonoBehaviour
     [SerializeField] private float groundCheckDistance;
     [SerializeField] private LayerMask groundLayer;
 
-    private Rigidbody rb;
+    public Rigidbody rb;
 
     public Vector3 LastVelocity;
 
